@@ -33,3 +33,108 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+:root{
+    --main-color :#15161f;
+    --seccond-color: #2f2d3b;
+    --pink-color :#fa88dd;
+    --light-pink-color:#f1b6dd;
+    --lilac-color:#aeb8ff;
+    --light-blue-color:#b4dbfe;
+    --white-g-color:#f4f7fb;
+    --gray-color:#e7e8f1;
+    --right-color-circle:#c4c9f0;
+}
+.folder{
+    color: var(--pink-color);
+    font-size:9rem;
+    position: relative;
+}
+.circle{
+    background: var(--lilac-color);
+    background: radial-gradient(circle farthest-side at left center, var(--lilac-color) 80%, var(--right-color-circle)  30%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.6em;
+    position: absolute;
+    bottom:0;
+    right: -20px;
+    z-index: 2;
+}
+.container-player{
+    background-color: var(--main-color);
+    padding: 2em;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.inner-container{
+    background-color: var(--seccond-color);
+    padding: 2em 3em 2em 2em ;
+    border-radius: 0.5em;
+}
+.inner-rectangle{
+    padding: 0.3em;
+    width:0.9em;
+    background: var(--pink-color);
+    background: -webkit-linear-gradient(to left, var(--pink-color) 8%, var(--light-pink-color) 11%);
+    background: -moz-linear-gradient(to left, var(--pink-color) 8%, var(--light-pink-color) 11%);
+    background: linear-gradient(to left, var(--pink-color) 8%, var(--light-pink-color) 11%);    
+    position: absolute;
+    border-radius: 0.1em 0.1em 0.3em 0.1em;
+    left:0.15em;
+    bottom: 0.07em;
+    z-index: 1;
+}
+.rec-small{
+    background: var(--white-g-color);
+    background: linear-gradient(to right, var(--white-g-color) 46%,var(--gray-color) 70%);
+    padding: 0.04em;
+    position: relative;
+    top: -0.2em;
+    left: -0.2em;
+}
+.name-artist,.name-music{
+    padding: 1em 0;
+    color: var(--white-g-color);
+}
+.name-artist{
+    font-weight: 0.8em;
+    font-size: 0.8rem;
+}
+.duration-music{
+    background-color:var(--gray-color) ;
+    width: 100%;
+    padding: 0.01em 0;
+    margin-bottom: 1em;
+}
+.operation{
+    display: flex;
+    align-items: center;
+    color:var(--gray-color) ;
+    gap: 2em;
+    margin-bottom: 1em;
+}
+.circle-outer{
+    padding: 0.6em;
+    border-radius: 50%;
+    background: rgb(174,184,255);
+    background: linear-gradient(90deg, rgba(174,184,255,1) 35%, rgba(250,136,221,1) 100%);
+}
+.circle-inner{
+    background: var(--main-color);
+    padding: 2.5em;
+    border-radius: 50%;
+}
+.fav{
+    display: flex;
+    align-items: center;
+    color:var(--gray-color) ;
+    gap: 11em;
+}
