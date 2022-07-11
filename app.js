@@ -25,7 +25,7 @@ playsongBtn.addEventListener("click", () => {
         background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%); 
     } 
       `;
-      document.head.appendChild(slidingTagLiAfterStyle);
+      document.head.appendChild(slidingspinCircleAfterStyle);
       playSong();
     } else {
       iconPlayPause.classList.remove("fa-pause");
