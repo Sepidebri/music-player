@@ -2,15 +2,14 @@ const playsongBtn = document.querySelector(".circle-inner");
 const audio = document.querySelector("audio");
 const iconPlayPause = document.querySelector(".play-pause");
 const spinCircle = document.querySelector(".circle-outer");
-const slidingTagLiAfterStyle = document.createElement("style");
+const slidingspinCircleAfterStyle = document.createElement("style");
 
 playsongBtn.addEventListener("click", () => {
   try {
     if (iconPlayPause.classList.contains("fa-play")) {
       iconPlayPause.classList.remove("fa-play");
       iconPlayPause.classList.add("fa-pause");
-
-      slidingTagLiAfterStyle.innerHTML = `
+      slidingspinCircleAfterStyle.innerHTML = `
       .circle-outer::after{
         display: block;
         border-radius: 50%;
@@ -31,7 +30,7 @@ playsongBtn.addEventListener("click", () => {
     } else {
       iconPlayPause.classList.remove("fa-pause");
       iconPlayPause.classList.add("fa-play");
-      slidingTagLiAfterStyle.innerHTML = "";
+      slidingspinCircleAfterStyle.innerHTML = "";
       pauseSong();
     }
   } catch (e) {
