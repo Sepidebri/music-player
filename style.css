@@ -152,7 +152,8 @@ audio{
     background:var(--lilac-color);
     background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%); 
 }
-.circle-outer::after{
+/* .circle-outer::after{
+    display: block;
     border-radius: 50%;
     padding: 0.6em;
     content:"";
@@ -161,10 +162,10 @@ audio{
     left: 0px;
     height: 100%;
     width: 100%;
-    /* animation: spinner 1s infinite ;
+    animation: spinner 1s infinite ;
     background:var(--lilac-color);
-    background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%);  */
-}
+    background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%); 
+} */
 .circle-outer .circle-inner i{
     position: absolute;
     transform: translate(-50%, -50%);
