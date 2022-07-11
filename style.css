@@ -47,6 +47,7 @@ body{
     --light-blue-color:#b4dbfe;
     --white-g-color:#f4f7fb;
     --gray-color:#e7e8f1;
+    --gray-opa-color:#e7e8f13c;
     --right-color-circle:#c4c9f0;
 }
 .folder{
@@ -108,11 +109,25 @@ body{
     font-weight: 0.8em;
     font-size: 0.8rem;
 }
-.duration-music{
-    background-color:var(--gray-color) ;
+audio{
+    display: none;
+}
+.duration-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 0.01em 0;
     margin-bottom: 1em;
+}
+.duration-music{
+    background-color:var(--gray-opa-color) ;
+    width: 100%;
+}
+.progress-music{
+    width: 20%;
+    padding: 0.1em 0;
+    background:var(--lilac-color);
+    background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%);
 }
 .operation{
     display: flex;
@@ -120,21 +135,64 @@ body{
     color:var(--gray-color) ;
     gap: 2em;
     margin-bottom: 1em;
+    cursor: pointer;
+    position: relative;
+}
+.backward:hover , .forward:hover{
+    padding: 0.8em 1em;
+    background:var(--lilac-color);
+    background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%);
+    border-radius: 50%;
+    cursor: pointer;
 }
 .circle-outer{
-    padding: 0.6em;
+    position: relative;
     border-radius: 50%;
-    background: rgb(174,184,255);
-    background: linear-gradient(90deg, rgba(174,184,255,1) 35%, rgba(250,136,221,1) 100%);
+    padding: 0.6em;
+    background:var(--lilac-color);
+    background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%); 
+}
+.circle-outer::after{
+    border-radius: 50%;
+    padding: 0.6em;
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    /* animation: spinner 1s infinite ;
+    background:var(--lilac-color);
+    background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%);  */
+}
+.circle-outer .circle-inner i{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 2;
 }
 .circle-inner{
     background: var(--main-color);
     padding: 2.5em;
     border-radius: 50%;
 }
+.circle-inner:hover{
+    background:var(--lilac-color);
+    background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%);
+}
 .fav{
     display: flex;
     align-items: center;
     color:var(--gray-color) ;
-    gap: 11em;
+    gap: 7em;
+    cursor: pointer;
+}
+@keyframes spinner {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
 }
