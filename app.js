@@ -7,7 +7,7 @@ const musicArtist = document.querySelector(".name-artist");
 const musicImage = document.querySelector(".inner-container");
 const musicProgress = document.querySelector(".progress-music");
 const musicForward = document.getElementById("forward");
-const slidingTagLiAfterStyle = document.createElement("style");
+const slidingspinCircleAfterStyle = document.createElement("style");
 
 document.addEventListener("DOMContentLoaded", getSong);
 musicForward.addEventListener("click", forward);
@@ -16,8 +16,7 @@ playsongBtn.addEventListener("click", () => {
     if (iconPlayPause.classList.contains("fa-play")) {
       iconPlayPause.classList.remove("fa-play");
       iconPlayPause.classList.add("fa-pause");
-
-      slidingTagLiAfterStyle.innerHTML = `
+      slidingspinCircleAfterStyle.innerHTML = `
       .circle-outer::after{
         display: block;
         border-radius: 50%;
@@ -33,12 +32,12 @@ playsongBtn.addEventListener("click", () => {
         background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%); 
     } 
       `;
-      document.head.appendChild(slidingTagLiAfterStyle);
+      document.head.appendChild(slidingspinCircleAfterStyle);
       playSong();
     } else {
       iconPlayPause.classList.remove("fa-pause");
       iconPlayPause.classList.add("fa-play");
-      slidingTagLiAfterStyle.innerHTML = "";
+      slidingspinCircleAfterStyle.innerHTML = "";
       pauseSong();
     }
   } catch (e) {
