@@ -8,7 +8,9 @@ const musicImage = document.querySelector(".inner-container");
 const musicProgress = document.querySelector(".progress-music");
 const musicForward = document.getElementById("forward");
 const slidingspinCircleAfterStyle = document.createElement("style");
+const containerFolder = document.querySelector(".container-folder");
 
+audio.addEventListener("timeupdate", (e) => {});
 document.addEventListener("DOMContentLoaded", getSong);
 musicForward.addEventListener("click", forward);
 playsongBtn.addEventListener("click", () => {
@@ -79,11 +81,13 @@ async function getSong() {
     );
     const { tracks } = await response.json();
     const random = randomIntFromInterval(0, tracks.length);
+    containerFolder.classList.add("disapear");
     audio.src = tracks[random].hub.actions[1].uri;
     musicName.textContent = tracks[random].title;
     musicArtist.textContent = tracks[random].subtitle;
-    // musicProgress.max = audio.duration;
-    musicImage.style.cssText += `padding: 2em 3em 2em 2em;border-radius: 0.5em;background-image: url(${tracks[random].images.background});background-repeat: no-repeat;background-position: center;background-size: cover;`;
+    musicImage.style.cssText += `padding: 2em 3em 2em 2em;border-radius: 0.5em;background-image: url(${tracks[random].images.background});background-repeat: no-repeat;background-position: center;background-size: cover;
+    width:17em;
+    height:17em;`;
   } catch (e) {
     console.log(e);
   }

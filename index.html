@@ -10,24 +10,24 @@
   <body>
     <div class="container-player">
       <div class="inner-container">
-        <i  class="fa-solid fa-folder folder">
-          <div class="inner-rectangle">
-            <div class="rec-small"></div>
-          </div>
-          <i  class="fa-solid fa-circle-dot circle"></i>
-        </i>
+        <div class="container-folder">
+          <i class="fa-solid fa-folder folder">
+            <div class="inner-rectangle">
+              <div class="rec-small"></div>
+            </div>
+            <i class="fa-solid fa-circle-dot circle"></i>
+          </i>
+        </div>
       </div>
       <h3 class="name-music">...</h3>
       <p class="name-artist">...</p>
       <audio controls>
-        <source
-          type="audio/mp3"
-        />
+        <source type="audio/mp3" />
       </audio>
       <div class="duration-container">
         <div class="duration-music">
-          <!-- <div  class="progress-music" ></div> -->
-          <progress class="progress-music"  max="100" value="0" ></progress>
+          <div class="progress-music"></div>
+          <!-- <progress class="progress-music" max="100" value="0"></progress> -->
         </div>
       </div>
       <div class="operation">
@@ -51,7 +51,3 @@
     <script src="/app.js"></script>
   </body>
 </html>
-
-<!--
-<i class="fa-solid fa-circle-stop"></i>
- -->
