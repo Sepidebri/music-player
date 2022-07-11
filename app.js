@@ -12,8 +12,9 @@ const containerFolder = document.querySelector(".container-folder");
 const durationMusic = document.querySelector(".duration-music");
 const durationMusicStyle = window.getComputedStyle(durationMusic);
 const songProgress = document.querySelector(".progress-music");
-console.log(songProgress);
+
 audio.addEventListener("timeupdate", progressUpdate);
+durationMusic.addEventListener("click", seekSong);
 document.addEventListener("DOMContentLoaded", getSong);
 musicForward.addEventListener("click", forward);
 playsongBtn.addEventListener("click", () => {
@@ -101,10 +102,16 @@ function progressUpdate(ev) {
     const wth = durationMusicStyle.getPropertyValue("width");
     const newWidth = wth.slice(0, wth.length - 2);
     songProgress.style.width = `${(currentTime / duration) * newWidth}px`;
-  } catch (e) {
-    console.log(e);
-  }
+  } catch (e) {}
 }
 // function removeTowCharacterFromLast(str) {
 //   str = str.slice(0, str.length - 2);
 // }
+function seekSong(ev) {
+  try {
+    const { duration } = audio;
+    const wth = durationMusicStyle.getPropertyValue("width");
+    const newWidth = wth.slice(0, wth.length - 2);
+    audio.currentTime = (ev.offsetX / newWidth) * duration;
+  } catch (e) {}
+}
