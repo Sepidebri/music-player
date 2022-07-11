@@ -120,14 +120,13 @@ audio{
     margin-bottom: 1em;
 }
 .duration-music{
-    background-color:var(--gray-opa-color) ;
     width: 100%;
 }
 .progress-music{
-    width: 20%;
-    padding: 0.1em 0;
+    width: 100%;
     background:var(--lilac-color);
     background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%);
+    height: 5px;
 }
 .operation{
     display: flex;

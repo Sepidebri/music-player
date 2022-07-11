@@ -5,6 +5,7 @@ const spinCircle = document.querySelector(".circle-outer");
 const musicName = document.querySelector(".name-music");
 const musicArtist = document.querySelector(".name-artist");
 const musicImage = document.querySelector(".inner-container");
+const musicProgress = document.querySelector(".progress-music");
 const musicForward = document.getElementById("forward");
 const slidingTagLiAfterStyle = document.createElement("style");
 
@@ -82,8 +83,8 @@ async function getSong() {
     audio.src = tracks[random].hub.actions[1].uri;
     musicName.textContent = tracks[random].title;
     musicArtist.textContent = tracks[random].subtitle;
+    // musicProgress.max = audio.duration;
     musicImage.style.cssText += `padding: 2em 3em 2em 2em;border-radius: 0.5em;background-image: url(${tracks[random].images.background});background-repeat: no-repeat;background-position: center;background-size: cover;`;
-    console.log(tracks[random]);
   } catch (e) {
     console.log(e);
   }
