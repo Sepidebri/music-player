@@ -128,7 +128,7 @@ audio{
     border-radius: 30%;
 }
 .progress-music{
-    width: 20%;
+    width: 0%;
     background:var(--lilac-color);
     background: linear-gradient(90deg, var(--lilac-color) 35%, var(--pink-color) 100%);
     height: 5px;

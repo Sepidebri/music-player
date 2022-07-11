@@ -9,8 +9,11 @@ const musicProgress = document.querySelector(".progress-music");
 const musicForward = document.getElementById("forward");
 const slidingspinCircleAfterStyle = document.createElement("style");
 const containerFolder = document.querySelector(".container-folder");
-
-audio.addEventListener("timeupdate", (e) => {});
+const durationMusic = document.querySelector(".duration-music");
+const durationMusicStyle = window.getComputedStyle(durationMusic);
+const songProgress = document.querySelector(".progress-music");
+console.log(songProgress);
+audio.addEventListener("timeupdate", progressUpdate);
 document.addEventListener("DOMContentLoaded", getSong);
 musicForward.addEventListener("click", forward);
 playsongBtn.addEventListener("click", () => {
@@ -92,3 +95,16 @@ async function getSong() {
     console.log(e);
   }
 }
+function progressUpdate(ev) {
+  try {
+    const { duration, currentTime } = ev.srcElement;
+    const wth = durationMusicStyle.getPropertyValue("width");
+    const newWidth = wth.slice(0, wth.length - 2);
+    songProgress.style.width = `${(currentTime / duration) * newWidth}px`;
+  } catch (e) {
+    console.log(e);
+  }
+}
+// function removeTowCharacterFromLast(str) {
+//   str = str.slice(0, str.length - 2);
+// }
